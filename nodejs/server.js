@@ -1,6 +1,6 @@
 /*
  * jQuery Ibsen Buzz! Server
- * @author: Luis Su·rez (@HolaSoyGuicho)
+ * @author: Luis Su√°rez (@HolaSoyGuicho)
  * @url: https://ibsenbuzz.com/projects/ibsenjs
  *
  * @package: IbsenJS
