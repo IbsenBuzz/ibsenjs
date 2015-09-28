@@ -12,26 +12,39 @@
     } else if (typeof $Ibsen === 'undefined') {
         console.error('$Ibsen.buzz require $IbsenJS. Download https://ibsenbuzz.com/git/ibsenjs');
     } else {
+        $Ibsen.buzz = {
+            default: {
+                desktop: {
+                    title: 'IbsenBuzz!',
+                    body : 'Visit more of our projects in https://ibsenbuzz.com/git',
+                    tag  : 'ibsenbuzz'
+                }
+            }
+        };
+
         $Ibsen.buzz.desktop = function (object) {
-            if (this.support.hasSupport()) {
-                var $Notification = this.support.Notification();
+            if ($Ibsen.buzz.desktop.support.hasSupport()) {
+                var $Notification = $Ibsen.buzz.desktop.support.Notification();
+
+                $options = $.extend({}, $Ibsen.buzz.default.desktop, object || {});
 
                 if ($Notification.permission === "granted") {
-                    $options = $.extend(object || {}, {
-                        title: 'IbsenBuzz!',
-                        body : 'Visit more of our projects in https://ibsenbuzz.com/git'
-                    });
-
                     return new $Notification($options.title, $options);
                 } else if ($Notification.permission !== 'denied') {
-                    return this.desktop(object);
+                    $Notification.requestPermission(function (permission) {
+                        if (permission === "granted") {
+                            return $Ibsen.buzz.desktop(object);
+                        } else {
+                            return $Ibsen.buzz.desktop(object);
+                        }
+                    });
                 }
             }
         };
 
         $Ibsen.buzz.desktop.support = {
             hasSupport  : function () {
-                if (($Ibsen.hasSupport('Notification') || $Ibsen.hasSupport('mozNotification') || $Ibsen.hasSupport('webkitNotification')) && !$Ibsen.hasSupport('FileReader')) {
+                if (($Ibsen.hasSupport('Notification') || $Ibsen.hasSupport('mozNotification') || $Ibsen.hasSupport('webkitNotification'))) {
                     return true;
                 } else {
                     $Ibsen.error.log('$Ibsen.buzz.desktop() Not supported in your browser.');
@@ -40,7 +53,8 @@
             },
             Notification: function () {
                 return window.Notification || window.mozNotification || window.webkitNotification;
-            }
+            },
+            default     : {}
         };
     }
 })(window.jQuery, window.$Ibsen);
