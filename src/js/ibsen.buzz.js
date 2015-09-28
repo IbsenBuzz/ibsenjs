@@ -8,16 +8,16 @@
  */
 (function ($, $Ibsen) {
     if (typeof $ === 'undefined') {
-        console.error('$Ibsen.buzz require jQuery. Download http://jquery.com/');
+        console.error('$Ibsen.buzz require jQuery. Download http://jquery.com/download/');
     } else if (typeof $Ibsen === 'undefined') {
         console.error('$Ibsen.buzz require $IbsenJS. Download https://ibsenbuzz.com/projects/ibsenjs');
     } else {
         $Ibsen.buzz = {
             desktop: function (object) {
                 if ($Ibsen.hasSupport('Notification')) {
-                    $options = $.extend(object || {}, {
+                    $options         = $.extend(object || {}, {
                         title: 'Ibsen Buzz',
-                        body:  'Content Body'
+                        body : 'Content Body'
                     });
                     var notification = new Notification($options.title, {
                         icon: $options.icon,

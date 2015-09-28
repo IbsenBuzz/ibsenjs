@@ -9,11 +9,11 @@
 (function ($) {
     if (typeof $ !== 'undefined') {
         $Ibsen = {
-            error:         {
-                log: function (msg) {
+            error        : {
+                log  : function (msg) {
                     console.error(msg);
                 },
-                how: function (msg, how) {
+                how  : function (msg, how) {
                     this.log(msg);
                     console.info('How to use:\n' + how);
                 },
@@ -21,14 +21,14 @@
                     console.info(msg);
                 }
             },
-            hasSupport:    function (has) {
+            hasSupport   : function (has) {
                 if (typeof has === 'string') {
                     return ((has in window) && window[has] !== null);
                 } else {
                     this.error.how('$Ibsen.hasSupport(string) require value has.', "if ($Ibsen.hasSupport('Notification') { \n\t// code here \n}");
                 }
             },
-            hasAttr:       function (selector, has) {
+            hasAttr      : function (selector, has) {
                 if (typeof selector !== 'undefined' && typeof has !== 'undefined') {
                     return ($(selector).attr(has) !== 'undefined');
                 } else {
@@ -45,7 +45,7 @@
                     this.error.how('$Ibsen.validateInput(selector, string) require selector and char valid input.', "$Ibsen.validateInput('#dni, #telephone', '0123456789-.');");
                 }
             },
-            isValidType: function(value, to) {
+            isValidType  : function (value, to) {
                 if (typeof value !== 'undefined' && typeof to !== 'undefined') {
                     return ((typeof value !== 'undefined') && (value !== '') && (typeof value === to));
                 } else {
@@ -57,6 +57,6 @@
         window.$Ibsen = $Ibsen;
     } else {
         window.$Ibsen = {};
-        console.error('IbsenJS require jQuery. Download http://jquery.com');
+        console.error('IbsenJS require jQuery. Download http://jquery.com/download/');
     }
 })(window.jQuery);
