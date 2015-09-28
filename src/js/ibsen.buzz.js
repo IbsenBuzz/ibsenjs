@@ -81,7 +81,7 @@
                 }
             },
             Notification: function () {
-                return window.Notification || window.mozNotification || window.webkitNotification;
+                return window.Notification || window.webkitNotification;
             }
         };
     }

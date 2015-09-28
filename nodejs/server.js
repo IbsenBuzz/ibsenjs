@@ -20,7 +20,7 @@ $server.listen($config.PORT, $config.SERVER, function () {
     console.log('Ibsen::io Server is running and listening to port %s:%d...', $config.SERVER, $config.PORT);
 });
 
-$app.get('/', function ($req, $res) {
+$app.get('/io', function ($req, $res) {
     $res.sendFile(__dirname + '/public/buzz.html');
 });
 

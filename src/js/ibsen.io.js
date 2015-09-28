@@ -137,11 +137,17 @@
             buzzME       : function (nsp, object) {
                 return this._buzz(this.nsp + ' ' + this.getSocketId() + ' ' + nsp, object, this.nsp + ' buzz_me');
             },
+            buzzme         : function (nsp, object) {
+                return this._buzz(this.nsp + ' ' + nsp, object, this.nsp + ' buzz_me');
+            },
             buzz         : function (nsp, object) {
                 return this._buzz(this.nsp + ' ' + nsp, object, this.nsp + ' buzz');
             },
             buzzRoom     : function (nsp, object, nsp_default) {
                 return this._buzz(this.nsp + ' ' + this.getJoinId() + ' ' + nsp, object, this.nsp + ' buzz');
+            },
+            buzzRoomME     : function (nsp, object, nsp_default) {
+                return this._buzz(this.nsp + ' ' + this.getJoinId() + ' ' + nsp, object, this.nsp + ' buzz_me');
             },
             _on          : function (nsp, fn) {
                 if ($Ibsen.isValidType(nsp, 'string') && $Ibsen.isValidType(fn, 'function')) {
