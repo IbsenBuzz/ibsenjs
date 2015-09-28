@@ -1,0 +1,29 @@
+{
+  "name": "ibsenjs-server",
+  "version": "1.0.0",
+  "description": "jQuery Ibsen Buzz! Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IbsenBuzz/ibsenjs.git"
+  },
+  "keywords": [
+    "IbsenBuzz",
+    "jQuery",
+    "NodeJS",
+    "Socket.IO"
+  ],
+  "author": "Luis Suárez (@HolaSoyGuicho)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IbsenBuzz/ibsenjs/issues"
+  },
+  "homepage": "https://github.com/IbsenBuzz/ibsenjs#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "socket.io": "^1.3.7"
+  }
+}
