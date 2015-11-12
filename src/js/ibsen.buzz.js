@@ -16,8 +16,8 @@
             default: {
                 desktop: {
                     title: 'IbsenBuzz!',
-                    body : 'Visit more of our projects in https://ibsenbuzz.com/git',
-                    tag  : 'ibsenbuzz'
+                    body:  'Visit more of our projects in https://ibsenbuzz.com/git',
+                    tag:   'ibsenbuzz'
                 }
             }
         };
@@ -44,7 +44,7 @@
         };
 
         $Ibsen.buzz.desktop.on = {
-            show : function (fn) {
+            show:  function (fn) {
                 if ($Ibsen.isValidType(fn, 'function')) {
                     $Ibsen.buzz.desktop.support._this.onshow = fn();
                 }
@@ -71,8 +71,8 @@
         };
 
         $Ibsen.buzz.desktop.support = {
-            _this       : null,
-            hasSupport  : function () {
+            _this:        null,
+            hasSupport:   function () {
                 if (($Ibsen.hasSupport('Notification') || $Ibsen.hasSupport('mozNotification') || $Ibsen.hasSupport('webkitNotification'))) {
                     return true;
                 } else {
