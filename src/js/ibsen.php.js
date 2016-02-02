@@ -1,6 +1,6 @@
 /*
  * jQuery Ibsen Buzz!
- * @author: Luis Suárez (@HolaSoyGuicho)
+ * @author: Luis Suárez (@Lu1sSuarez)
  * @url: https://ibsenbuzz.com/git/ibsenjs
  * 
  * @package: IbsenJS - PHP Code to JS
